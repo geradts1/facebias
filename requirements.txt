@@ -1,0 +1,8 @@
+numpy
+scipy
+pandas
+scikit-learn
+matplotlib
+pyyaml
+pytest
+lir            # NFI package, alleen voor de kruiscontrole in tests/

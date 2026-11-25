@@ -1,0 +1,9 @@
+torch                # CUDA; 24 GB minimaal (met offload), 80 GB comfortabel
+diffusers>=0.36      # ZImagePipeline, QwenImageEditPlusPipeline, Flux2Pipeline
+transformers>=4.57
+accelerate
+qwen-vl-utils
+insightface
+onnxruntime-gpu
+opencv-python
+tabulate             # datasheet-tabellen

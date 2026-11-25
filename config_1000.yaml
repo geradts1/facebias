@@ -1,0 +1,13 @@
+synth:
+  out_dir: data/synth1000
+  n_identities: 1000          # x (1 referentie + 4 bewerkingen) = 5000 gegenereerde gezichten
+  edits_per_identity: 4
+  t2i_backend: zimage
+  edit_backend: qwen_edit
+  edit_lightning: true
+  offload: true               # alleen nog voor Z-Image
+  edit_device_map: balanced   # Qwen-Edit verdeeld over beide GPU's, geen CPU-offload (minder RAM)
+  use_vlm: true
+  vlm_model: Qwen/Qwen2.5-VL-7B-Instruct
+  chunk_size: 50
+  seed: 2026

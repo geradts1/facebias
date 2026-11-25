@@ -1,0 +1,25 @@
+synth:
+  out_dir: data/synth5k
+  n_identities: 1000          # x (1 referentie + 4 bewerkingen) = 5000 gegenereerde gezichten
+  edits_per_identity: 4       # incl. 'ref2' (tweede pasfoto, andere dag)
+  always_ref2: true
+  # edit_pool: [cctv_ceiling, cctv_street, profile45, profile_r30, smile_selfie, talking, harsh_side, backlit, hood_up, doorbell]
+  degradations:
+    hq: null
+    cctv_mid: {face_px: 64, blur: 0.6, jpeg: 55, noise: 5, gamma: 1.0}
+    cctv_low: {face_px: 32, blur: 1.0, jpeg: 35, noise: 8, gamma: 1.0}
+  t2i_backend: zimage         # zimage (Apache-2.0) | flux2 (FLUX non-commercial licentie)
+  edit_backend: qwen_edit     # qwen_edit (Apache-2.0) | flux2
+  offload: false              # true op GPU's < 48 GB
+  size: 1024
+  face_model: buffalo_l       # onafhankelijk filtermodel, NIET System C
+  use_vlm: true
+  vlm_model: Qwen/Qwen2.5-VL-7B-Instruct
+  min_identity_sim: 0.40
+  max_ref_attempts: 6
+  max_edit_attempts: 3
+  dedup_threshold: 0.65
+  leakage_gallery_npy: null   # bv. data/real_gallery_emb.npy (zie README)
+  leakage_threshold: 0.50
+  ofiq_command: null
+  seed: 2026

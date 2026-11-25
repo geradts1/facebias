@@ -1,0 +1,7 @@
+torch          # CUDA-build, GPU met >=16 GB aanbevolen voor SDXL
+diffusers>=0.29
+transformers
+accelerate
+insightface
+onnxruntime-gpu
+opencv-python
